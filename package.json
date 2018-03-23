@@ -1,0 +1,12 @@
+{
+  "name": "glitchcam",
+  "version": "1.0.0",
+  "description": "Glitchy Webcam Toy",
+  "repository": "git@github.com:tchandler/glitchcam.git",
+  "author": "Tom Chandler <zohogorganzola@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "eslint": "^4.19.1",
+    "parcel-bundler": "^1.6.2"
+  }
+}
