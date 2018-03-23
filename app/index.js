@@ -1,22 +1,14 @@
-const canvas = document.getElementById('post-video')
-const cc = canvas.getContext('2d')
-var constraints = { audio: true, video: { width: 1280, height: 720 } }
+import initVideo from './video'
+import VideoCanvas from './canvas'
 
-navigator.mediaDevices
-  .getUserMedia(constraints)
-  .then(function(mediaStream) {
-    var video = document.querySelector("video")
-    video.srcObject = mediaStream
-    video.onloadedmetadata = function(e) {
-      video.play()
-      start(video)
-    }
-  })
-  .catch(function(err) {
-    console.log(err.name + ": " + err.message)
-  });
+initVideo().then(video => {
+  const videoCanvas = new VideoCanvas(video, video.clientWidth, video.clientHeight)
+  video.style.display = 'none';
+  console.log(videoCanvas)
+  run(videoCanvas)
+})
 
-function start(video) {
-  cc.drawImage(video, 0, 0, 1280, 720)
-  requestAnimationFrame(() => start(video))
+function run(videoCanvas) {
+  videoCanvas.draw()
+  requestAnimationFrame(() => run(videoCanvas))
 }
