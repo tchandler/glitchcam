@@ -1,0 +1,10 @@
+[package]
+name = "filters"
+version = "0.1.0"
+authors = ["Tom Chandler <zohogorganzola@gmail.com>"]
+
+[dependencies]
+stdweb = "*"
+
+[lib]
+crate-type = ["cdylib"]
