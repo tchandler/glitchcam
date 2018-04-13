@@ -8,6 +8,6 @@
   "dependencies": {
     "eslint": "^4.19.1",
     "parcel-bundler": "^1.6.2",
-    "parcel-plugin-cargo-web": "^0.2.0"
+    "parcel-plugin-cargo-web": "^0.1.0"
   }
 }

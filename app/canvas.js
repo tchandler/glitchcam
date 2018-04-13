@@ -1,3 +1,5 @@
+import filters from './filters'
+
 const makeCanvas = id => {
   let canvas = document.getElementById(id)
 
@@ -41,14 +43,16 @@ export default class VideoCanvas {
     imageData[index + 2] = orgB + a * (b - orgB);
   }
 
-  procesImageData (imageData) {
+  processImageData (imageData) {
+    console.log(filters)
+    console.log(filters.testId(7))
     return imageData
   }
 
   draw () {
     this.bufferContext.drawImage(this.video, 0, 0, this.width, this.height)
     const bufferImageData = this.bufferContext.getImageData(0, 0, this.width, this.height)
-    const processedImageData = this.procesImageData(bufferImageData)
+    const processedImageData = this.processImageData(bufferImageData)
     this.viewContext.putImageData(processedImageData, 0, 0)
   }
 }
